@@ -1,8 +1,22 @@
 <?php
 require __DIR__ . '/includes/init.php';
+$isDentaHome = true;
 $meta = [
-    'title' => 'Коробков Александр Олегович — эндоваскулярный хирург в Москве',
-    'description' => 'Официальный сайт врача эндоваскулярного хирурга Коробкова Александра Олеговича: направления работы, материалы для пациентов, публикации и контакты.',
+    'title' => 'Denta Prime Clinic — премиальная стоматология и имплантация в Москве',
+    'description' => 'Демо-сайт премиальной стоматологической клиники Denta Prime Clinic: имплантация, эстетическая стоматология, цифровая диагностика и индивидуальный план лечения.',
+    'og_title' => 'Denta Prime Clinic — центр имплантации и эстетической стоматологии',
+    'og_description' => 'Спокойная стоматология премиального уровня: консультация, диагностика, имплантация, виниры, реставрации и профессиональная гигиена.',
+    'og_image' => canonical_origin() . '/assets/img/content/24%201.png',
+    'site_name' => 'Denta Prime Clinic',
+    'favicon' => 'assets/img/content/heart_kiojwzdgf0ot 1.png',
+    'skip_default_schema' => true,
+    'schema' => [[
+        '@context' => 'https://schema.org',
+        '@type' => 'WebSite',
+        'name' => 'Denta Prime Clinic',
+        'url' => canonical_url_for_page('index.php'),
+        'inLanguage' => 'ru-RU',
+    ]],
 ];
 require __DIR__ . '/includes/head.php';
 require __DIR__ . '/includes/header.php';
@@ -13,18 +27,18 @@ require __DIR__ . '/includes/header.php';
                 <div class="container hero__grid">
                     <div class="hero__visual">
                         <div class="hero__image-card">
-                            <img src="assets/img/content/hero-doctor0.png" alt="Фото врача эндоваскулярного хирурга" class="hero__image" width="853" height="1280" loading="eager" fetchpriority="high" decoding="async">
+                            <img src="assets/img/content/a3d5ef2905d311f19b865ac8eb9d274d_1-no-bg-preview (carve.photos) 1.png" alt="Специалист Denta Prime Clinic" class="hero__image" width="423" height="506" loading="eager" fetchpriority="high" decoding="async">
                         </div>
                     </div>
 
                     <div class="hero__content">
                         <div class="hero__content-panel">
-                            <h1 class="hero__title"><!-- TODO: Заменить на реальные данные врача -->Коробков<br>Александр Олегович </h1>
-                            <p class="hero__subtitle"><!-- TODO: Заменить на реальные данные врача -->Врач эндоваскулярный хирург</p>
-                            <p class="hero__subtitle"><!-- TODO: Заменить на реальные данные врача -->Стаж работы 16 лет</p>
+                            <h1 class="hero__title">Denta Prime<br>Clinic</h1>
+                            <p class="hero__subtitle">Премиальная стоматологическая клиника</p>
+                            <p class="hero__subtitle">Имплантация, эстетика и цифровой план лечения</p>
 
                             <div class="hero__actions">
-                                <a class="button button--accent" href="kontakty.php">Связаться</a>
+                                <a class="button button--accent" href="kontakty.php">Записаться на консультацию</a>
                             </div>
                         </div>
                     </div>
@@ -34,33 +48,116 @@ require __DIR__ . '/includes/header.php';
             <section class="section section--tight" id="specialization">
                 <div class="container">
                     <div class="section__head">
-                        <h2 class="section__title">Направления работы</h2>
+                        <h2 class="section__title">Направления клиники</h2>
                     </div>
 
-                    <?php require __DIR__ . '/includes/work-directions-data.php'; ?>
-                    <?php require __DIR__ . '/includes/work-directions-content.php'; ?>
+                    <?php
+                    $workDirectionsData = [
+                        [
+                            'id' => 'implantation',
+                            'card_title' => 'Имплантация зубов',
+                            'card_description' => 'Планирование восстановления зубов с учетом диагностики, анатомии и будущей эстетики улыбки.',
+                            'full_title' => 'Имплантация зубов',
+                            'icon' => 'assets/img/content/serdtse_w8z16fskl1pt 1.png',
+                            'paragraphs' => [
+                                'Перед лечением врач проводит консультацию, изучает снимки и объясняет возможные варианты восстановления.',
+                                'План подбирается индивидуально: учитываются состояние костной ткани, прикус, эстетические задачи и комфорт пациента.',
+                            ],
+                            'images' => [
+                                ['src' => 'assets/img/content/1(1).png', 'alt' => 'Консультация перед стоматологическим лечением'],
+                            ],
+                            'warning' => 'Имеются противопоказания, необходима консультация специалиста.',
+                        ],
+                        [
+                            'id' => 'aesthetic-dentistry',
+                            'card_title' => 'Эстетическая стоматология',
+                            'card_description' => 'Виниры, реставрации и бережная работа с формой, оттенком и естественной гармонией улыбки.',
+                            'full_title' => 'Эстетическая стоматология',
+                            'icon' => 'assets/img/content/heart_kiojwzdgf0ot 1.png',
+                            'paragraphs' => [
+                                'Эстетический план строится без навязанных решений: врач обсуждает ожидания, ограничения и последовательность этапов.',
+                                'Цель — аккуратная, естественная улыбка, которая соответствует чертам лица и не выглядит чрезмерной.',
+                            ],
+                            'images' => [
+                                ['src' => 'assets/img/content/i (13) 1.png', 'alt' => 'Кабинет эстетической стоматологии'],
+                            ],
+                            'warning' => 'Имеются противопоказания, необходима консультация специалиста.',
+                        ],
+                        [
+                            'id' => 'therapy',
+                            'card_title' => 'Терапевтическое лечение',
+                            'card_description' => 'Диагностика, лечение кариеса и восстановление зубов с вниманием к деталям и долгосрочному плану.',
+                            'full_title' => 'Терапевтическое лечение',
+                            'icon' => 'assets/img/content/heart_kiojwzdgf0ot 1.png',
+                            'paragraphs' => [
+                                'На консультации специалист объясняет состояние зубов понятным языком и предлагает последовательный маршрут лечения.',
+                                'Мы избегаем лишних вмешательств и фиксируем приоритеты: срочные задачи, профилактику и эстетические пожелания.',
+                            ],
+                            'images' => [
+                                ['src' => 'assets/img/content/i (12) 1.png', 'alt' => 'Обсуждение плана лечения'],
+                            ],
+                            'warning' => 'Имеются противопоказания, необходима консультация специалиста.',
+                        ],
+                        [
+                            'id' => 'hygiene',
+                            'card_title' => 'Профессиональная гигиена',
+                            'card_description' => 'Деликатная профилактика, рекомендации по домашнему уходу и поддержание здоровья полости рта.',
+                            'full_title' => 'Профессиональная гигиена',
+                            'icon' => 'assets/img/content/serdtse_w8z16fskl1pt 1.png',
+                            'paragraphs' => [
+                                'Гигиена помогает поддерживать результат лечения и вовремя замечать изменения, требующие внимания специалиста.',
+                                'После процедуры пациент получает персональные рекомендации по средствам ухода и графику профилактических визитов.',
+                            ],
+                            'images' => [
+                                ['src' => 'assets/img/content/i (11) 1.png', 'alt' => 'Профилактический осмотр пациента'],
+                            ],
+                            'warning' => 'Имеются противопоказания, необходима консультация специалиста.',
+                        ],
+                    ];
+                    require __DIR__ . '/includes/work-directions-content.php';
+                    ?>
                 </div>
             </section>
 
             <section class="section section--about" id="about">
                 <div class="container about">
                     <div class="about__content">
-                        <h2 class="section__title section__title--left"><!-- TODO: Заменить на реальные данные врача -->Коробков<br>Александр Олегович</h2>
-                        <p class="about__lead"><!-- TODO: Заменить на реальные данные врача -->ВРАЧ ЭНДОВАСКУЛЯРНЫЙ ХИРУРГ</p>
-                        <div class="about__text"><!-- TODO: Заменить на реальные данные врача -->
-                            <p>Коробков Александр Олегович — эндоваскулярный хирург, ангиохирург, 16 лет клинической практики, врач высшей квалифицированной категории, соискатель ученой степени кандидата медицинских наук в ФГБНУ «РНЦХ им. акад. Б.В. Петровского».</p>
-                            <p>В 2010 году с отличием закончил бюджетную форму обучения в ММА им. И.М. Сеченова.</p>
-                            <p>В 2012 году был первым выпускником ординатуры в стране по специальности «рентгенэндоваскулярные диагностика и лечение» на базе ФГБНУ «РНЦХ им. акад. Б.В. Петровского».</p>
-                            <p>На базе ФГАУ "НМИЦ ЛРЦ" Минздрава России при участии Коробкова Александра Олеговича были разработаны и утверждены Министерством здравоохранения РФ к практическому применению 7 протоколов клинических апробаций. </p>
-                            <p>В 2017 г награжден Благодарностью Министра здравоохранения Российской Федерации.</p>
-                            <p>Сегодня выступает спикером на профильных конгрессах по эндоваскулярной хирургии в России и проводит обучение врачей.</p>
-                            <p>Александр Олегович находится у истоков венозного стентирования и стентирования сонных артерий в России. </p>
+                        <h2 class="section__title section__title--left">О Denta Prime<br>Clinic</h2>
+                        <p class="about__lead">ЦЕНТР ИМПЛАНТАЦИИ И ЭСТЕТИЧЕСКОЙ СТОМАТОЛОГИИ</p>
+                        <div class="about__text">
+                            <p>Denta Prime Clinic — демонстрационный образ премиальной стоматологической клиники, где консультация начинается с внимательной диагностики и спокойного разговора о целях пациента.</p>
+                            <p>Мы объединяем имплантацию, терапевтическое лечение, профессиональную гигиену, виниры и реставрации в понятный индивидуальный план без медицинских обещаний результата.</p>
+                            <p>В центре внимания — цифровая диагностика, эстетика, аккуратная коммуникация и поэтапное объяснение каждого решения до начала лечения.</p>
+                            <p>Контакты демо-проекта: +7 (495) 000-00-00, hello@dentaprime.demo, г. Москва, ул. Примерная, 12.</p>
                         </div>
                     </div>
 
                     <div class="about__visual">
-                        <!-- TODO: Вставить изображение about-doctor.webp в /assets/img/content/ -->
-                        <img src="assets/img/content/fotoVracha.png" alt="Портрет врача" class="about__image">
+                        <img src="assets/img/content/81ff483d05d611f1a8306e3932282319_1 1.png" alt="Специалист стоматологической клиники" class="about__image" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--results" id="results">
+                <div class="container">
+                    <div class="section__head section__head--results">
+                        <h2 class="section__title">Пространство и подход</h2>
+                    </div>
+                    <div class="results-slider-area">
+                        <div class="results-slider" aria-label="Галерея Denta Prime Clinic">
+                            <article class="result-card">
+                                <img class="result-card__image" src="assets/img/content/1(1).png" alt="Консультация пациента в клинике" loading="lazy" decoding="async">
+                                <div class="result-card__meta"><p class="result-card__meta-title">Консультация и обсуждение ожиданий</p></div>
+                            </article>
+                            <article class="result-card">
+                                <img class="result-card__image" src="assets/img/content/i (11) 1.png" alt="Командный осмотр пациента" loading="lazy" decoding="async">
+                                <div class="result-card__meta"><p class="result-card__meta-title">Командный подход к плану лечения</p></div>
+                            </article>
+                            <article class="result-card">
+                                <img class="result-card__image" src="assets/img/content/i (12) 1.png" alt="Врач обсуждает план лечения с пациентом" loading="lazy" decoding="async">
+                                <div class="result-card__meta"><p class="result-card__meta-title">Понятное объяснение этапов лечения</p></div>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -70,7 +167,7 @@ require __DIR__ . '/includes/header.php';
             <section class="legal-note-section" aria-label="Юридическое примечание">
                 <div class="container">
                     <div class="legal-note" role="note">
-                        <p class="legal-note__text">Индивидуальный предприниматель Коробков А.О. не оказывает медицинских услуг. Размещённая на сайте информация носит справочно-информационный характер и не является публичной офертой. Окончательная стоимость медицинских услуг рассчитывается медицинской организацией АО «Медицина» после очной консультации с врачом, исходя из клинической картины и объёма необходимых вмешательств. Для получения точной информации о стоимости необходимой Вам медицинской услуги, пожалуйста, свяжитесь с медицинской организацией напрямую по телефону. Вы также можете обратиться ко мне для организации записи на консультацию к профильному специалисту.</p>
+                        <p class="legal-note__text">Информация на сайте носит справочный характер и не является медицинской консультацией. Имеются противопоказания, необходима консультация специалиста.</p>
                     </div>
                 </div>
             </section>

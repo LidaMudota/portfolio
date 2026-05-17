@@ -8,7 +8,9 @@ $canonical = $meta['canonical'];
 $noindex = !empty($meta['noindex']);
 $ogImage = $meta['og_image'];
 $ogType = $meta['og_type'];
+$siteName = $meta['site_name'] ?? 'Коробков Александр Олегович';
 $twitterCard = $meta['twitter_card'];
+$favicon = $meta['favicon'] ?? 'assets/img/icons/spec-heart-transplant.svg';
 $schemas = $meta['schema'] ?? [];
 ?>
 <!DOCTYPE html>
@@ -30,7 +32,7 @@ $schemas = $meta['schema'] ?? [];
     <meta property="og:locale" content="ru_RU">
     <meta property="og:title" content="<?= e($ogTitle); ?>">
     <meta property="og:description" content="<?= e($ogDescription); ?>">
-    <meta property="og:site_name" content="Коробков Александр Олегович">
+    <meta property="og:site_name" content="<?= e($siteName); ?>">
     <meta property="og:url" content="<?= e($canonical); ?>">
     <?php if (!empty($ogImage)): ?>
         <meta property="og:image" content="<?= e($ogImage); ?>">
@@ -41,7 +43,7 @@ $schemas = $meta['schema'] ?? [];
     <?php if (!empty($ogImage)): ?>
         <meta name="twitter:image" content="<?= e($ogImage); ?>">
     <?php endif; ?>
-    <link rel="icon" type="image/svg+xml" href="assets/img/icons/spec-heart-transplant.svg">
+    <link rel="icon" href="<?= e($favicon); ?>">
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

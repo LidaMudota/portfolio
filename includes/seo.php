@@ -166,7 +166,10 @@ function resolve_seo_meta(array $meta = []): array
     if (!is_array($schemas)) {
         $schemas = [];
     }
-    $resolved['schema'] = array_merge($schemas, seo_structured_data($page, $resolved['canonical']));
+    if (empty($resolved['skip_default_schema'])) {
+        $schemas = array_merge($schemas, seo_structured_data($page, $resolved['canonical']));
+    }
+    $resolved['schema'] = $schemas;
 
     return $resolved;
 }
