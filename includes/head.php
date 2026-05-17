@@ -12,6 +12,7 @@ $siteName = $meta['site_name'] ?? 'Коробков Александр Олег�
 $twitterCard = $meta['twitter_card'];
 $favicon = $meta['favicon'] ?? 'assets/img/icons/spec-heart-transplant.svg';
 $schemas = $meta['schema'] ?? [];
+$bodyClass = trim((string) ($bodyClass ?? ''));
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -59,5 +60,5 @@ $schemas = $meta['schema'] ?? [];
         <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
     <?php endforeach; ?>
 </head>
-<body>
+<body<?= $bodyClass !== '' ? ' class="' . e($bodyClass) . '"' : ''; ?>>
 <div class="site-shell">

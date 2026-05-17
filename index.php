@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/includes/init.php';
 $isDentaHome = true;
+$bodyClass = 'home-denta-page';
 $meta = [
     'title' => 'Denta Prime Clinic — премиальная стоматология и имплантация в Москве',
     'description' => 'Демо-сайт премиальной стоматологической клиники Denta Prime Clinic: имплантация, эстетическая стоматология, цифровая диагностика и индивидуальный план лечения.',

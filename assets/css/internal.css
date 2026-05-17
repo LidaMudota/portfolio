@@ -2689,3 +2689,56 @@ body.modal-open {
         font-size: 9px;
     }
 }
+
+/* Home service modal inherits the medical palette without touching other pages. */
+body.home-denta-page .direction-modal__overlay {
+    background: rgba(3, 11, 13, 0.72);
+    backdrop-filter: blur(8px);
+}
+
+body.home-denta-page .direction-modal__dialog {
+    border-color: rgba(174, 220, 212, 0.18);
+    background:
+        radial-gradient(circle at 14% 0%, rgba(56, 198, 176, 0.12), transparent 34%),
+        linear-gradient(155deg, rgba(16, 42, 48, 0.985), rgba(7, 19, 22, 0.985));
+    box-shadow: 0 28px 72px rgba(0, 0, 0, 0.52);
+}
+
+body.home-denta-page .direction-modal__label {
+    color: #62d8c7;
+}
+
+body.home-denta-page .direction-modal__title {
+    color: #f2faf9;
+}
+
+body.home-denta-page .direction-modal__text {
+    color: #a8c3c0;
+}
+
+body.home-denta-page .direction-modal__warning {
+    border-color: rgba(174, 220, 212, 0.18);
+    background: rgba(56, 198, 176, 0.07);
+    color: #d8ecea;
+}
+
+body.home-denta-page .direction-modal__divider::after,
+body.home-denta-page .direction-modal__divider::before {
+    background: linear-gradient(90deg, transparent, rgba(174, 220, 212, 0.18), transparent);
+}
+
+body.home-denta-page .direction-modal__close,
+body.home-denta-page .direction-modal__carousel-arrow {
+    border-color: rgba(174, 220, 212, 0.16);
+    background: rgba(16, 42, 48, 0.92);
+    color: #f2faf9;
+}
+
+body.home-denta-page .direction-modal__close:hover,
+body.home-denta-page .direction-modal__close:focus-visible,
+body.home-denta-page .direction-modal__carousel-arrow:hover,
+body.home-denta-page .direction-modal__carousel-arrow:focus-visible {
+    border-color: rgba(56, 198, 176, 0.42);
+    background: rgba(20, 52, 59, 0.96);
+    color: #62d8c7;
+}
