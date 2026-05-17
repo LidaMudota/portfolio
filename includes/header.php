@@ -83,6 +83,19 @@ $mobileGroups = $isDentaHome ? [
         ['href' => 'posle-operatsii.php', 'label' => 'После операции'],
     ],
 ];
+
+$currentPath = basename(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?: 'index.php');
+$currentPath = $currentPath === '' ? 'index.php' : $currentPath;
+$isCurrentHeaderLink = static function (string $href) use ($currentPath): bool {
+    if (strpos($href, '#') === 0) {
+        return false;
+    }
+
+    $linkPath = basename(parse_url($href, PHP_URL_PATH) ?: 'index.php');
+    $linkPath = $linkPath === '' ? 'index.php' : $linkPath;
+
+    return $linkPath === $currentPath;
+};
 ?>
 <header class="header" id="top">
             <div class="container header__inner">
@@ -93,7 +106,8 @@ $mobileGroups = $isDentaHome ? [
 
                 <nav class="header__nav nav" aria-label="Основная навигация">
                     <?php foreach ($desktopNav as $item): ?>
-                        <a class="nav__link" href="<?= e($item['href']); ?>"><?= e($item['label']); ?></a>
+                        <?php $isActive = $isCurrentHeaderLink($item['href']); ?>
+                        <a class="nav__link<?= $isActive ? ' nav__link--active' : ''; ?>" href="<?= e($item['href']); ?>"<?= $isActive ? ' aria-current="page"' : ''; ?>><?= e($item['label']); ?></a>
                     <?php endforeach; ?>
                 </nav>
 
@@ -139,7 +153,8 @@ $mobileGroups = $isDentaHome ? [
                     <?php foreach ($megaColumns as $column): ?>
                         <div class="mega-menu__column">
                             <?php foreach ($column as $item): ?>
-                                <a class="mega-menu__link" href="<?= e($item['href']); ?>"><?= e($item['label']); ?></a>
+                                <?php $isActive = $isCurrentHeaderLink($item['href']); ?>
+                                <a class="mega-menu__link<?= $isActive ? ' mega-menu__link--active' : ''; ?>" href="<?= e($item['href']); ?>"<?= $isActive ? ' aria-current="page"' : ''; ?>><?= e($item['label']); ?></a>
                             <?php endforeach; ?>
                         </div>
                     <?php endforeach; ?>
@@ -167,7 +182,8 @@ $mobileGroups = $isDentaHome ? [
                         <div class="mobile-nav__group">
                             <p class="mobile-nav__group-title"><?= e($groupTitle); ?></p>
                             <?php foreach ($items as $item): ?>
-                                <a class="mobile-nav__link" href="<?= e($item['href']); ?>"><?= e($item['label']); ?></a>
+                                <?php $isActive = $isCurrentHeaderLink($item['href']); ?>
+                                <a class="mobile-nav__link<?= $isActive ? ' mobile-nav__link--active' : ''; ?>" href="<?= e($item['href']); ?>"<?= $isActive ? ' aria-current="page"' : ''; ?>><?= e($item['label']); ?></a>
                             <?php endforeach; ?>
                         </div>
                     <?php endforeach; ?>

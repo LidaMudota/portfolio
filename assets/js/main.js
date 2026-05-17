@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const megaMenu = document.getElementById('mega-menu');
     const mobileToggle = document.querySelector('[data-mobile-nav-toggle]');
     const mobileNav = document.getElementById('mobile-nav');
+    const mobileClose = document.querySelector('[data-mobile-nav-close]');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav__link');
     const mobileViewport = window.matchMedia('(max-width: 1024px)');
     const phoneInputs = document.querySelectorAll('[data-phone-input]');
@@ -288,6 +289,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuToggle?.setAttribute('aria-expanded', 'false');
             }
             toggleSection(mobileToggle, mobileNav);
+        });
+
+        mobileClose?.addEventListener('click', () => {
+            mobileNav.setAttribute('hidden', 'hidden');
+            mobileToggle.setAttribute('aria-expanded', 'false');
         });
 
         mobileNavLinks.forEach((link) => {
