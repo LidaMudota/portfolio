@@ -1,0 +1,127 @@
+.personal-data-consent-page {
+    padding-top: 30px;
+    overflow-x: hidden;
+}
+
+.personal-data-consent-page__document {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 30px;
+    min-width: 0;
+    border-radius: 12px;
+}
+
+.personal-data-consent-page .info-card,
+.personal-data-consent-page .info-card:hover {
+    transform: none;
+    transition: none;
+    box-shadow: none;
+}
+
+.personal-data-consent-page__download {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: rgba(245, 247, 251, 0.92);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: border-color 0.16s ease, background-color 0.16s ease, color 0.16s ease;
+}
+
+.personal-data-consent-page__download:hover,
+.personal-data-consent-page__download:focus-visible {
+    border-color: rgba(24, 198, 198, 0.56);
+    background: rgba(24, 198, 198, 0.1);
+    color: #f5f7fb;
+}
+
+.personal-data-consent-page__download:focus-visible {
+    outline: 2px solid rgba(24, 198, 198, 0.45);
+    outline-offset: 2px;
+}
+
+.personal-data-consent-page__download--bottom {
+    margin-top: 28px;
+    margin-bottom: 0;
+}
+
+.personal-data-consent-page__header {
+    margin-bottom: 20px;
+}
+
+.personal-data-consent-page__header h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+}
+
+.personal-data-consent-page__header p {
+    margin: 8px 0 0;
+    color: rgba(245, 247, 251, 0.74);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.personal-data-consent-page__document section {
+    margin-top: 28px;
+}
+
+.personal-data-consent-page__document h2 {
+    margin: 0 0 14px;
+    font-size: 20px;
+    line-height: 1.45;
+}
+
+.personal-data-consent-page__document p,
+.personal-data-consent-page__document li {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 16px;
+    line-height: 1.66;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: none;
+}
+
+.personal-data-consent-page__document p + p,
+.personal-data-consent-page__document p + ul,
+.personal-data-consent-page__document ul + p {
+    margin-top: 10px;
+}
+
+.personal-data-consent-page__document ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.personal-data-consent-page__document li + li {
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .personal-data-consent-page__document {
+        padding: 18px;
+    }
+
+    .personal-data-consent-page__download {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .personal-data-consent-page__header h2,
+    .personal-data-consent-page__document h2 {
+        font-size: 18px;
+    }
+
+    .personal-data-consent-page__document p,
+    .personal-data-consent-page__document li {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}

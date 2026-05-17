@@ -1,0 +1,9 @@
+<svg width="520" height="360" viewBox="0 0 520 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="520" height="360" fill="#E5EBF2"/>
+  <rect x="24" y="24" width="472" height="312" rx="24" fill="#F7FAFD"/>
+  <circle cx="136" cy="148" r="50" fill="#CBDCE8"/>
+  <circle cx="226" cy="148" r="50" fill="#D9E6F0"/>
+  <circle cx="322" cy="148" r="50" fill="#C4D8E8"/>
+  <rect x="102" y="214" width="272" height="62" rx="20" fill="#D7E4EE"/>
+  <text x="50%" y="316" text-anchor="middle" fill="#71818F" font-family="Arial, sans-serif" font-size="18">TODO: заменить на реальное изображение кейса</text>
+</svg>

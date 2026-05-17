@@ -1,0 +1,15 @@
+{
+  "name": "Коробков Александр Олегович — эндоваскулярный хирург",
+  "short_name": "Коробков А.О.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "assets/img/icons/spec-heart-transplant.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

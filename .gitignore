@@ -1,0 +1,18 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+*.tmp
+
+# Local secrets
+.env
+.env.*
+config/mail.local.php
+config/secrets.php
+
+# Optional local overrides
+config/local.php

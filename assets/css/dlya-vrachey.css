@@ -1,0 +1,109 @@
+.physicians-page {
+    background: #121212;
+    padding-top: 56px;
+    padding-bottom: 72px;
+}
+
+.physicians-article {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 36px 40px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.015) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    color: #f2f2f2;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.28);
+}
+
+.physicians-article__intro {
+    margin: 0 0 20px;
+    font-size: 1.2rem;
+    line-height: 1.45;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.physicians-article__list {
+    margin: 0;
+    padding-left: 1.6rem;
+}
+
+.physicians-article__list li {
+    margin: 0;
+    padding: 0 0 18px;
+    color: rgba(242, 242, 242, 0.94);
+    line-height: 1.7;
+    hyphens: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.physicians-article__list li:last-child {
+    margin-bottom: 20px;
+}
+
+.physicians-article p {
+    margin: 0;
+    line-height: 1.7;
+    color: rgba(242, 242, 242, 0.94);
+    hyphens: none;
+}
+
+.physicians-article p + p {
+    margin-top: 16px;
+}
+
+.physicians-article a {
+    color: #d9b778;
+    text-decoration-color: rgba(217, 183, 120, 0.65);
+    text-underline-offset: 0.15em;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.physicians-article a:hover,
+.physicians-article a:focus-visible {
+    color: #f2cf8f;
+    text-decoration-color: currentColor;
+}
+
+@media (max-width: 1024px) {
+    .physicians-page {
+        padding-top: 48px;
+        padding-bottom: 60px;
+    }
+
+    .physicians-article {
+        padding: 32px 28px;
+        border-radius: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .physicians-page {
+        padding-top: 34px;
+        padding-bottom: 44px;
+    }
+
+    .physicians-article {
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
+
+    .physicians-article__intro {
+        margin-bottom: 14px;
+        font-size: 1.06rem;
+    }
+
+    .physicians-article__list {
+        padding-left: 1.3rem;
+        padding-top: 15px;
+    }
+
+    .physicians-article__list li {
+        padding-bottom: 14px;
+        line-height: 1.6;
+    }
+
+    .physicians-article p {
+        line-height: 1.6;
+    }
+}
